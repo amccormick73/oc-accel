@@ -1,0 +1,229 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 2755
+License: Customer
+
+Current time: 	Tue Mar 24 15:19:19 GMT 2020
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: CentOS Linux release 7.6.1810 (Core)
+OS Version: 3.10.0-957.5.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: localhost:10.0
+Screen size: 1440x900
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 75 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/home/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	am
+User home directory: /home/am
+User working directory: /home/am/local_vivado_projects/oc-accel/oc-accel/actions/hdl_single_engine/hw/hdl
+User country: 	GB
+User language: 	en
+User locale: 	en_GB
+
+RDI_BASEROOT: /home/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2019.1
+RDI_DATADIR: /home/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: /home/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: /home/am/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /home/am/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /home/am/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/home/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/am/local_vivado_projects/oc-accel/oc-accel/actions/hdl_single_engine/hw/hdl/vivado.log
+Vivado journal file location: 	/home/am/local_vivado_projects/oc-accel/oc-accel/actions/hdl_single_engine/hw/hdl/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-2755-stoviesiv.corp.alpha-data.com
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@apollo:/opt/Xilinx/Alpha-Data_2015_EncryptedWriter_V1_14C1.lic:/home/am/.Xilinx/RFSoCEA.lic:/home/am/.Xilinx/XilinxCMAC.lic:/opt/Xilinx/HBM_xilinx.lic
+XILINX_DSP: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2019.1
+XILINX_SDK: /opt/Xilinx/SDK/2019.1
+XILINX_VIVADO: /opt/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,124 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: INFO: [Common 17-1460] Use of init.tcl in /home/am/.Xilinx/Vivado/init.tcl is deprecated. Please use Vivado_init.tcl  
+// Tcl Message: Sourcing tcl script '/home/am/.Xilinx/Vivado/init.tcl' 100 Beta devices matching pattern found, 0 enabled. 
+// Tcl Message: start_gui 
+// WARNING: HEventQueue.dispatchEvent() is taking  2632 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,129 MB. GUI used memory: 40 MB. Current time: 3/24/20, 3:19:20 PM GMT
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 68, 122); // dt (af, cl)
+// Elapsed time: 13 seconds
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/homes/am/n/VHDL/hpc/nbody/vivado/nbody_large_9h7/nbody_large_9h7.xpr", 5); // q (O, cl)
+// [GUI Memory]: 74 MB (+74877kb) [00:01:31]
+// [Engine Memory]: 5,139 MB (+5236722kb) [00:01:31]
+// Opening Vivado Project: /homes/am/n/VHDL/hpc/nbody/vivado/nbody_large_9h7/nbody_large_9h7.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 5,158 MB. GUI used memory: 39 MB. Current time: 3/24/20, 3:20:30 PM GMT
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (by)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CLOSE
+// CommandFailedException: ERROR: [Common 17-69] Command failed:  
+// Tcl Message: INFO: [Common 17-344] 'open_project' was cancelled 
+dismissDialog("Open Project"); // by (cl)
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/am/local_vivado_projects/9h7/aurora_rdma/aurora_rdma.xpr", 7); // q (O, cl)
+// Opening Vivado Project: /home/am/local_vivado_projects/9h7/aurora_rdma/aurora_rdma.xpr. Version: Vivado v2019.1 
+// by (cl):  Open Project : addNotify
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 79 MB (+1853kb) [00:01:53]
+// [GUI Memory]: 91 MB (+7918kb) [00:01:55]
+// [GUI Memory]: 96 MB (+827kb) [00:01:55]
+// [GUI Memory]: 121 MB (+20623kb) [00:01:55]
+// WARNING: HEventQueue.dispatchEvent() is taking  4039 ms.
+// Tcl Message: open_project /home/am/local_vivado_projects/9h7/aurora_rdma/aurora_rdma.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/am/local_vivado_projects/9h7/dma_demo-admpcie9v3-v1_0_0/fpga/repo/interfaces'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/am/local_vivado_projects/9h7/dma_demo-admpcie9v3-v1_0_0/fpga/repo/vivado-2015.1'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/am/local_vivado_projects/9h7/dma_demo-admpcie9v3-v1_0_0/fpga/repo/vivado-2017.1'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,313 MB. GUI used memory: 60 MB. Current time: 3/24/20, 3:20:53 PM GMT
+// WARNING: HEventQueue.dispatchEvent() is taking  1032 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:09 . Memory (MB): peak = 6723.984 ; gain = 139.551 ; free physical = 166 ; free virtual = 25317 
+// Project name: aurora_rdma; location: /home/am/local_vivado_projects/9h7/aurora_rdma; part: xcvu37p-fsvh2892-2-e
+// Elapsed time: 11 seconds
+dismissDialog("Open Project"); // by (cl)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 950ms to process. Increasing delay to 3000 ms.
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1188 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd)]", 1, true); // B (F, cl) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd)]", 1); // B (F, cl)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd), gen_aurora[0].aurora_rdma_core_1 : aurora_rdma_core(rtl) (aurora_rdma_core.vhd)]", 12, true); // B (F, cl) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd), gen_aurora[0].aurora_rdma_core_1 : aurora_rdma_core(rtl) (aurora_rdma_core.vhd)]", 12); // B (F, cl)
+// Elapsed time: 23 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd), gen_aurora[0].aurora_rdma_core_1 : aurora_rdma_core(rtl) (aurora_rdma_core.vhd)]", 12, true); // B (F, cl) - Node
+// [GUI Memory]: 127 MB (+579kb) [00:02:48]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, aurora_rdma(mixed) (aurora_rdma.vhd), gen_aurora[0].aurora_rdma_core_1 : aurora_rdma_core(rtl) (aurora_rdma_core.vhd)]", 12, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 30 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "IP Catalog", 1); // k (j, cl)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI Infrastructure ;  ;  ;  ; ", 6); // L (O, cl)
+// Elapsed time: 13 seconds
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25, "AXI DataMover", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI Data FIFO ; AXI4 ; Production ; Included ; xilinx.com:ip:axi_data_fifo:2.1", 24, "AXI Data FIFO", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25, "AXI DataMover", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI Data FIFO ; AXI4 ; Production ; Included ; xilinx.com:ip:axi_data_fifo:2.1", 24, "AXI Data FIFO", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI Data FIFO ; AXI4 ; Production ; Included ; xilinx.com:ip:axi_data_fifo:2.1", 24, "AXI Data FIFO", 0, false); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25, "AXI DataMover", 0, false); // L (O, cl)
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25, "AXI DataMover", 0, false); // L (O, cl)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25); // L (O, cl)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "AXI DataMover ; AXI4, AXI4-Stream ; Production ; Included ; xilinx.com:ip:axi_datamover:5.1", 25, "AXI DataMover", 0, false, false, false, false, false, true); // L (O, cl) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// r (cl): Customize IP: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1401 ms.
+// Elapsed time: 12 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Advanced", 1); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+// Elapsed time: 13 seconds
+selectComboBox("Memory Map Data Width (c_m_axi_mm2s_data_width)", "1024", 5); // E (E, r)
+// Elapsed time: 80 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Advanced", 1); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+selectComboBox("Stream Data Width (c_m_axis_mm2s_tdata_width)", "256", 5); // E (E, r)
+// Elapsed time: 11 seconds
+selectCheckBox((HResource) null, "Enable xCACHE xUSER", true); // g (o, r): TRUE
+// WARNING: HEventQueue.dispatchEvent() is taking  1226 ms.
+// Elapsed time: 158 seconds
+selectComboBox("Memory Map Data Width (c_m_axi_s2mm_data_width)", "1024", 5); // E (E, r)
+selectComboBox("Stream Data Width (c_s_axis_s2mm_tdata_width)", "256", 5); // E (E, r)
+// Elapsed time: 12 seconds
+selectCheckBox((HResource) null, "Enable xCACHE xUSER", false); // g (o, r): FALSE
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Advanced", 1); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+// Elapsed time: 13 seconds
+setText("Address Width (32-64)", "64"); // z (bh, r)
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", true); // g (o, r): TRUE
+selectCheckBox((HResource) null, "Enable S2MM Control Signals", true); // g (o, r): TRUE
+// [GUI Memory]: 135 MB (+1186kb) [00:16:13]
+// Elapsed time: 391 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Advanced", 1); // bg (E, r)
+selectCheckBox((HResource) null, "Enable Indeterminate BTT Mode", true); // g (o, r): TRUE
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+// Elapsed time: 81 seconds
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", false); // g (o, r): FALSE
+selectCheckBox((HResource) null, "Enable S2MM Control Signals", false); // g (o, r): FALSE
+selectCheckBox((HResource) null, "Enable xCACHE xUSER", true); // g (o, r): TRUE
+selectCheckBox((HResource) null, "Enable xCACHE xUSER", false); // g (o, r): FALSE
+// Elapsed time: 96 seconds
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", true); // g (o, r): TRUE
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", false); // g (o, r): FALSE
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", true); // g (o, r): TRUE
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", false); // g (o, r): FALSE
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", true); // g (o, r): TRUE
+selectCheckBox((HResource) null, "Enable MM2S Control Signals", false); // g (o, r): FALSE
+// Elapsed time: 35 seconds
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Advanced", 1); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,352 MB. GUI used memory: 76 MB. Current time: 3/24/20, 3:50:55 PM GMT
