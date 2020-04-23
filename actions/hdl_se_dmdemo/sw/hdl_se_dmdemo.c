@@ -210,10 +210,11 @@ static int run_se_dmdemo (struct snap_card* h,
     int ready      = 0;
     int read_error = 0;
     int both_done  = 0;
+    int tx_done = 0;
     uint64_t t_start;
     uint32_t cnt;
     uint32_t reg_data;
-    
+        
 
     VERBOSE0 (" ----- START SNAP_CONTROL ----- \n");
     snap_action_start ((void*)h);
@@ -241,16 +242,24 @@ static int run_se_dmdemo (struct snap_card* h,
 
     cnt = 0;
     do { 
+        
         reg_data = action_read(h, REG_RX0_STATUS);
         if ((reg_data & 0x200) == 0x200 ){
             both_done = 1;
-            VERBOSE0 ("AFU has finished all transactions.\n");
+            reg_data = action_read(h, REG_RX0_STS_DATA);
+            action_write(h, REG_RX0_CONTROL, 0x00000100);
+            action_write(h, REG_RX0_CONTROL, 0x00000000);
+            printf("AFU has finished all transactions. %8.8x\n", reg_data);
             break;
         }
-        if ((reg_data & 0x200) == 0x200 ){
-            both_done = 1;
-            VERBOSE0 ("TX has finished.\n");
-            break;
+        reg_data = action_read(h, REG_TX0_STATUS);
+	if ( ( (reg_data & 0x200) == 0x200 ) && (tx_done==0) ){
+            reg_data = action_read(h, REG_TX0_STS_DATA);
+            action_write(h, REG_TX0_CONTROL, 0x00000100);
+            action_write(h, REG_TX0_CONTROL, 0x00000000);
+	    tx_done  =1;
+            printf("TX has finished. %8.8x\n", reg_data);
+            
         }
         cnt ++;
     } while (cnt < timeout * 1000); //Use timeout to emulate max allowed MMIO read times

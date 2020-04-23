@@ -218,7 +218,14 @@ module oc_function (
     , output  [0 : 0]        c0_ddr4_ck_t
    `endif
    `endif
-
+`ifdef ENABLE_QSFP
+   ,output [`NUM_OF_QSFP*4-1:0]           qsfp_txp
+   ,output [`NUM_OF_QSFP*4-1:0]           qsfp_txn		    
+   ,input  [`NUM_OF_QSFP*4-1:0]           qsfp_rxp
+   ,input  [`NUM_OF_QSFP*4-1:0]           qsfp_rxn
+   ,input  [`NUM_OF_QSFP-1:0]           qsfp_ckp
+   ,input  [`NUM_OF_QSFP-1:0]           qsfp_ckn
+`endif
 `ifdef ENABLE_HBM
 `endif
 );
@@ -445,7 +452,14 @@ framework_afu  fw_afu
       .clock_tlx                           ( clock_tlx),                                 // -- input
       .clock_afu                           ( clock_afu ),                                 // -- input
       .reset                               ( reset_afu00 ),                               // -- input
-                                                                                         
+  `ifdef ENABLE_QSFP
+   .qsfp_txp ( qsfp_txp)
+  , .qsfp_txn ( qsfp_txn)
+  , .qsfp_rxp ( qsfp_rxp)
+  , .qsfp_rxn ( qsfp_rxn)
+  , .qsfp_ckp ( qsfp_ckp)
+  , .qsfp_ckn ( qsfp_ckn),		    
+`endif                                                                                           
   `ifdef ENABLE_DDR 
   `ifdef AD9V3
   

@@ -269,6 +269,25 @@ config BRAM_USED
 	default "TRUE"  if ENABLE_BRAM
 	default "FALSE" if ! ENABLE_BRAM
 
+config ENABLE_QSFP
+	bool
+	prompt "Enable QSFP"
+	depends on (AD9V3)
+	help
+	  This option enables the QSFP cages IO. 
+
+config QSFP_USED
+	string
+	default "TRUE"  if ENABLE_QSFP
+	default "FALSE" if ! ENABLE_QSFP
+
+config NUM_OF_QSFP
+	int
+	default 1
+	range 1 4
+	  
+
+
 #FIXME We don't have DDR3 anymore.
 config ENABLE_DDR3
 	bool

@@ -67,6 +67,11 @@
 `define ENABLE_HBM
 #endif
 
+#if defined(CONFIG_ENABLE_QSFP)
+`define ENABLE_QSFP
+`define NUM_OF_QSFP CONFIG_NUM_OF_QSFP
+#endif
+
 #if defined(CONFIG_ACTION_HALF_WIDTH)
 `define ACTION_HALF_WIDTH
 #endif

@@ -16,6 +16,8 @@
 `timescale 1ns/1ps
 
 `include "snap_global_vars.v"
+
+
 //oc_snap_core
 //action_wrapper
 //afu_descriptor
@@ -29,7 +31,16 @@ module framework_afu (
     input                 clock_tlx
   , input                 clock_afu
   , input                 reset
-
+		      
+`ifdef ENABLE_QSFP		      
+   ,output [`NUM_OF_QSFP*4-1:0]           qsfp_txp
+   ,output [`NUM_OF_QSFP*4-1:0]           qsfp_txn		    
+   ,input  [`NUM_OF_QSFP*4-1:0]           qsfp_rxp
+   ,input  [`NUM_OF_QSFP*4-1:0]           qsfp_rxn
+   ,input  [`NUM_OF_QSFP-1:0]           qsfp_ckp
+   ,input  [`NUM_OF_QSFP-1:0]           qsfp_ckn
+`endif	
+		      
   // // AFU Index
   , input           [5:0] afu_index                            // // This AFU's Index within the Function
                                                              
@@ -1271,7 +1282,15 @@ module framework_afu (
       .m_axi_card_mem0_wuser              (                            ) ,
       .m_axi_card_mem0_wvalid             ( act_axi_card_mem0_wvalid   ) ,
 `endif
-      //
+`ifdef ENABLE_QSFP
+   .qsfp_txp ( qsfp_txp)
+  , .qsfp_txn ( qsfp_txn)
+  , .qsfp_rxp ( qsfp_rxp)
+  , .qsfp_rxn ( qsfp_rxn)
+  , .qsfp_ckp ( qsfp_ckp)
+  , .qsfp_ckn ( qsfp_ckn),		    
+`endif     
+     //
       // AXI Control Register Interface
       .s_axi_ctrl_reg_araddr              ( lite_conv2act_araddr       ) ,
       .s_axi_ctrl_reg_arready             ( lite_act2conv_arready      ) ,

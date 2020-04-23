@@ -152,6 +152,8 @@ wire[31:0] regw_rx0_control;
    
    
 
+   reg [7:0] tx0_req_count;
+   reg [7:0] rx0_req_count;
  
 
 //---- local controlling signals assignments ----
@@ -246,39 +248,7 @@ wire[31:0] regw_rx0_control;
        default :;
      endcase
 
-/***********************************************************************
-*                          Control Flow                                *
-***********************************************************************/
-// The build-in snap_action_start() and snap_action_completed functions 
-// sets REG_snap_control bit "start" and reads bit "idle"
-// The other things are managed by REG_user_control (user defined control register)
-// Flow:
-// ---------------------------------------------------------------------------------------------
-// Software                                  Hardware REG                               Hardware signal & action
-// ---------------------------------------------------------------------------------------------
-// snap_action_start()                      |                                          |
-//                                          | SNAP_CONTROL[snap_start]=1               |
-// mmio_write(USER_CONTROL[address...])     |                                          | snap_start_pulse
-// mmio_write(USER_CONTROL[pattern...])     |                                          | Spend 4096 cycles to clear tt_RAM
-// mmio_write(USER_CONTROL[number...])      |                                          |
-// wait(USER_CONTROL[engine_ready])==1      |                                          |
-//                                          | USER_STATUS[engine_ready]=1              |
-// mmio_write(USER_CONTROL[engine_start])=1 |                                          |
-//                                          | CONTROL[engine_start]=1                  |
-//                                          |                                          | engine_start_pulse
-//                                          |                                          | Run Read requests and Write requests
-//                                          |                                          | .
-//                                          |                                          | .
-//                                          |                                          | .
-//                                          |                                          | rd_done or wr_done or rd_error
-//                                          | USER_STATUS[rd_done/wr_done/rd_error]= 1 |
-// wait(USER_STATUS)                        |                                          |
-// Send 4096 MMIO reads for TT ...          |                                          |
-// mmio_write(USER_CONTROL[finish_dump])=1  |                                          |
-//                                          | USER_CONTROL[finish_dump]=1              |
-//                                          | SNAP_CONTROL[snap_idle]=1                |
-// snap_action_completed()                  |                                          |
-//
+
 
 wire snap_start_pulse;
 
@@ -305,9 +275,14 @@ always @(posedge clk or negedge rst_n) begin
     if (~rst_n) begin
        snap_idle_q <= 0;
     end
-    else if (1'b1) begin   //finish_dump
+    else if ((tx0_req_count == 0) && (rx0_req_count == 0)) begin   //finish_dump
        snap_idle_q <= 1;
     end
+    else begin
+       snap_idle_q <= 0;
+       
+    end
+   
 end
  
 assign REG_snap_control_rd = {REG_snap_control[31:4], 1'b1, snap_idle_q, 1'b0, snap_start_q};
@@ -325,7 +300,8 @@ always @(posedge clk or negedge rst_n) begin
        tx0_cmd_tvalid <= 1'b0;
        tx0_sts_tready <= 1'b1;  
        tx0_cmd_tdata <= 0;
-   
+       tx0_req_count <= 0;
+       
     end
     else begin
        // COMMAND FIFO CONTROL
@@ -362,6 +338,14 @@ always @(posedge clk or negedge rst_n) begin
 	 REG_tx0_status[8] <= 1'b0;
        end
        REG_tx0_status[11] <= tx0_sts_prog_full;
+
+       if ((REG_tx0_control[0] & ~REG_tx0_status[0]) && ~(tx0_sts_tready & tx0_sts_tvalid)) begin
+	  tx0_req_count <= tx0_req_count+1;
+       end
+       else if (~(REG_tx0_control[0] & ~REG_tx0_status[0]) && (tx0_sts_tready & tx0_sts_tvalid)) begin
+          tx0_req_count <= tx0_req_count-1;
+       end	  
+       REG_tx0_status[23:16] <= tx0_req_count;
        
  
     end
@@ -378,6 +362,7 @@ always @(posedge clk or negedge rst_n) begin
        rx0_cmd_tvalid <= 1'b0;
        rx0_sts_tready <= 1'b1;  
        rx0_cmd_tdata <= 0;
+       rx0_req_count <= 0;
    
     end
     else begin
@@ -415,7 +400,13 @@ always @(posedge clk or negedge rst_n) begin
 	 REG_rx0_status[8] <= 1'b0;
        end
        REG_rx0_status[11] <= rx0_sts_prog_full;
-       
+       if ((REG_rx0_control[0] & ~REG_rx0_status[0]) && ~(rx0_sts_tready & rx0_sts_tvalid)) begin
+	  rx0_req_count <= rx0_req_count+1;
+       end
+       else if (~(REG_rx0_control[0] & ~REG_rx0_status[0]) && (rx0_sts_tready & rx0_sts_tvalid)) begin
+          rx0_req_count <= rx0_req_count-1;
+       end	  
+       REG_rx0_status[23:16] <= rx0_req_count;
  
     end
 end
